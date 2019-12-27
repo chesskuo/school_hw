@@ -1,0 +1,36 @@
+Test Times: 1
+
+Initial
+
+Weight:
+[[1. 0.]
+ [0. 1.]]
+
+Biases:
+[[1.]
+ [1.]]
+
+----------
+After Training
+
+Weight:
+[[-2.  0.]
+ [ 0. -2.]]
+
+Biases:
+[[-1.]
+ [ 0.]]
+
+----------
+Result:
+W
+B
+P
+O
+Total Epoch: 4
+Error Times: 0
+Using time: 0.0010 seconds
+
+==============================
+Total Error: 0
+Total time using: 0.0010 seconds

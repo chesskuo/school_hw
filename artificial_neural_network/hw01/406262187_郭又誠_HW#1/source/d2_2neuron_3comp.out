@@ -1,0 +1,72 @@
+Test Times: 1
+
+Initial
+
+Weight:
+[[ 5.74917625 -7.18425187 -4.01387993]
+ [-9.46234587  1.00708677 -2.94229762]]
+
+Biases:
+[[1.85658801]
+ [4.84572265]]
+
+----------
+After Training
+
+Weight:
+[[ 14.68447625 -15.51785187  -0.50257993]
+ [  2.24215413   0.95838677 -40.04949762]]
+
+Biases:
+[[ 3.85658801]
+ [13.84572265]]
+
+----------
+Result:
+W
+P
+B
+B
+P
+W
+O
+P
+O
+O
+W
+B
+B
+O
+P
+P
+B
+W
+B
+O
+B
+P
+B
+P
+O
+O
+O
+B
+O
+P
+W
+W
+O
+B
+P
+P
+W
+P
+W
+P
+Total Epoch: 3
+Error Times: 0
+Using time: 0.0738 seconds
+
+==============================
+Total Error: 0
+Total time using: 0.0738 seconds
