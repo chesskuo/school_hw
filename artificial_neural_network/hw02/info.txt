@@ -1,0 +1,35 @@
+繳交作業規則請參考 : 程式作業繳交注意事項.pdf
+
+程式作業二題目 : 2019Program2_ANN.pdf
+
+測試與訓練資料分別為 iris_training_data.txt 與 iris_testing_data.txt
+
+(四個特徵值與類別，分別用"空格"分開)
+
+期限 12/30
+
+----------------------------------------------
+
+程式輸出內容 格式參考
+
+Number of hidden neurons = 1
+
+Learning rates = 1
+
+training accuracies = 96%
+
+testing  accuracies = 85%
+
+epochs = 10
+
+--------------------------------------------
+
+Number of hidden neurons = 2
+
+Learning rates = 1
+
+training accuracies = 99%
+
+testing  accuracies = 89%
+
+epochs = 15
