@@ -1,86 +1,103 @@
 import math
 import random
-import time
-from neuron import *
+from backpropagation import *
 
-TraningFile = open("iris_training_data.txt","r")
-TestFile = open("iris_testing_data.txt","r")
-OutputFile = open("Output.out","w")
-TrainData = []
-TestData = []
+# ======================================== #
+#              user config                 #
+# ======================================== #
 
-def readFile() :
+trainIn = open("iris_training_data.txt", "r")
+testIn = open("iris_testing_data.txt", "r")
+fileOut = open("result.txt", "w")
 
-	global TrainData
-	global TestData
-	TrainData = []
-	TestData = []
+lr_list = [1.0, 0.5, 0.1]
+hidden_num_list = [1, 5, 10, 15, 30, 50]
 
-	for i in TraningFile.readlines() :
-		A,B,C,D,Kind = i.split()
-		data = ((float(A),float(B),float(C),float(D)),UCI(Kind))
-		TrainData.append(data)
+epochLimit = 1000000
 
-	for i in TestFile.readlines() :
-		A,B,C,D,Kind = i.split()
-		data = ((float(A),float(B),float(C),float(D)),UCI(Kind))
-		TestData.append(data)
+# ======================================== #
 
-def UCI(Kind) :
-	if Kind == "versicolor":
+
+
+
+
+def read_data():
+
+	global trainData
+	global testData
+
+	trainData = []
+	testData = []
+
+	for i in trainIn.readlines() :
+		a, b, c, d, kind = i.split()
+		data = ((float(a), float(b), float(c), float(c)), trans_UCI(kind))
+		trainData.append(data)
+
+	for i in testIn.readlines() :
+		a, b, c, d, kind = i.split()
+		data = ((float(a), float(b), float(c), float(d)), trans_UCI(kind))
+		testData.append(data)
+
+def trans_UCI(kind) :
+	if kind == 'versicolor':
 		return [0.9, 0.1, 0.1]
-	if Kind == "virginica":
+	elif kind == 'virginica':
 		return [0.1, 0.9, 0.1]
-	if Kind == "setosa":
+	elif kind == 'setosa':
 		return [0.1, 0.1, 0.9]
 
-def main(HiddenNum,LRate) :
+
+
+def training(hidden_num, lr) :
 	
-	Network = NeuralNetwork(LRate)
-	HiddenLayer = NeuronLayer(4,HiddenNum)
-	OutputLayer = NeuronLayer(HiddenNum,3)
+	network = NeuralNetwork(lr)
+	hiddenLayer = NeuronLayer(4, hidden_num)
+	outputLayer = NeuronLayer(hidden_num, 3)
 
-	Network.addLayer(HiddenLayer)
-	Network.addLayer(OutputLayer)
+	network.add_layer(hiddenLayer)
+	network.add_layer(outputLayer)
 
-	Epoch = 1
-	EpochLimit = 1000000
-	while Epoch < EpochLimit and Network.countError(TrainData) > 0.01 :
-		Network.train(TrainData)
-		print("Train {}, {}".format(Epoch,Network.countError(TrainData)))
-		Epoch += 1
-	# Training Data
+	epoch = 1
+	curErr = 1
 
-	print("Number of hidden neurons = {}".format(HiddenNum), file=OutputFile)
-	print("Learning rates = {}".format(LRate), file= OutputFile)
+	while (epoch < epochLimit) and (curErr > 0.01):
+		network.train(trainData)
+		curErr = network.calculate_total_error(trainData)
+		# print(f'-[RUN] Training ... {epoch :d}, {curErr :f}')
+		epoch += 1
 
-	# print("**********************", file=OutputFile)
-	AC = 0
-	for inputs,outputs in TrainData :
-		# print("{}, {}".format(Network.getOutput(inputs),outputs), file=OutputFile)
-		if Network.getOutput(inputs) == outputs :
-			AC += 1
-	# print("**********************", file=OutputFile)
-	print("training accuracies = {}%".format(AC/len(TrainData)*100), file=OutputFile)
+	return network, epoch
+
+
+
+def write_output(network, epoch):
+
+	print(f'Number of hidden neurons = {hidden_num :d}', file=fileOut)
+	print(f'Learning rates = {lr :d}', file= fileOut)
+
+	ac = 0
+	for inputs,outputs in trainData :
+		if network.get_output(inputs) == outputs :
+			ac += 1
+	print(f'training accuracies = {ac / len(trainData) * 100 :d}%', file=fileOut)
 	
-	# print("**********************", file=OutputFile)
-	AC = 0
-	for inputs,outputs in TestData :
-		# print("{}, {}".format(Network.getOutput(inputs),outputs), file=OutputFile)
-		if Network.getOutput(inputs) == outputs :
-			AC += 1
-	# print("**********************", file=OutputFile)
-	print("test accuracies = {}%".format(AC/len(TestData)*100), file=OutputFile)
-	print("epochs = {}".format(Epoch), file=OutputFile)
-	print("-----------------------------------", file = OutputFile)
+	ac = 0
+	for inputs,outputs in testData :
+		if network.get_output(inputs) == outputs :
+			ac += 1
+	print(f'test accuracies = {ac / len(testData) * 100 :d}%', file=fileOut)
+
+	print(f'epochs = {epoch :d}', file=fileOut)
+	print('-----------------------------------', file = fileOut)
 
 
-LRate = [1.0, 0.5, 0.1]
-HiddenNum = [1, 5, 10, 15, 30, 50]
+
+
 
 if __name__ == "__main__" :
-	readFile()
-	for i in HiddenNum :
-		for j in LRate :
-			main(i,j)
-			print("Completed {},{}".format(i,j))
+	read_data()
+	for i in hidden_num_list :
+		for j in lr_list :
+			write_output(training(i, j))
+			print(f'+[OK] hn={i:d}, lr={j:d}')
