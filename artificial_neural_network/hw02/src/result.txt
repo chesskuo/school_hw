@@ -1,0 +1,72 @@
+Number of hidden neurons = 1
+Learning rates = 1.000000
+training accuracies = 66.666667%
+test accuracies = 33.333333%
+epochs = 100000
+-----------------------------------
+Number of hidden neurons = 1
+Learning rates = 0.500000
+training accuracies = 75.833333%
+test accuracies = 33.333333%
+epochs = 1896
+-----------------------------------
+Number of hidden neurons = 1
+Learning rates = 0.100000
+training accuracies = 76.666667%
+test accuracies = 33.333333%
+epochs = 487
+-----------------------------------
+Number of hidden neurons = 10
+Learning rates = 1.000000
+training accuracies = 78.333333%
+test accuracies = 66.666667%
+epochs = 23
+-----------------------------------
+Number of hidden neurons = 10
+Learning rates = 0.500000
+training accuracies = 92.500000%
+test accuracies = 53.333333%
+epochs = 13
+-----------------------------------
+Number of hidden neurons = 10
+Learning rates = 0.100000
+training accuracies = 67.500000%
+test accuracies = 33.333333%
+epochs = 38
+-----------------------------------
+Number of hidden neurons = 20
+Learning rates = 1.000000
+training accuracies = 80.000000%
+test accuracies = 56.666667%
+epochs = 29
+-----------------------------------
+Number of hidden neurons = 20
+Learning rates = 0.500000
+training accuracies = 93.333333%
+test accuracies = 40.000000%
+epochs = 83
+-----------------------------------
+Number of hidden neurons = 20
+Learning rates = 0.100000
+training accuracies = 93.333333%
+test accuracies = 56.666667%
+epochs = 676
+-----------------------------------
+Number of hidden neurons = 30
+Learning rates = 1.000000
+training accuracies = 81.666667%
+test accuracies = 66.666667%
+epochs = 1071
+-----------------------------------
+Number of hidden neurons = 30
+Learning rates = 0.500000
+training accuracies = 90.833333%
+test accuracies = 56.666667%
+epochs = 4262
+-----------------------------------
+Number of hidden neurons = 30
+Learning rates = 0.100000
+training accuracies = 90.833333%
+test accuracies = 43.333333%
+epochs = 23618
+-----------------------------------

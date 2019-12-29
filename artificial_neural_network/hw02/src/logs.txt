@@ -1,0 +1,35 @@
+-[RUN] Training ... 5000, 0.236352
+-[RUN] Training ... 10000, 0.236479
+-[RUN] Training ... 15000, 0.234591
+-[RUN] Training ... 20000, 0.233517
+-[RUN] Training ... 25000, 0.234043
+-[RUN] Training ... 30000, 0.236953
+-[RUN] Training ... 35000, 0.236869
+-[RUN] Training ... 40000, 0.237690
+-[RUN] Training ... 45000, 0.236726
+-[RUN] Training ... 50000, 0.232331
+-[RUN] Training ... 55000, 0.236001
+-[RUN] Training ... 60000, 0.234928
+-[RUN] Training ... 65000, 0.236774
+-[RUN] Training ... 70000, 0.237537
+-[RUN] Training ... 75000, 0.231930
+-[RUN] Training ... 80000, 0.236234
+-[RUN] Training ... 85000, 0.234433
+-[RUN] Training ... 90000, 0.236914
+-[RUN] Training ... 95000, 0.236944
++[OK] hn=1, lr=1.000000
++[OK] hn=1, lr=0.500000
++[OK] hn=1, lr=0.100000
++[OK] hn=10, lr=1.000000
++[OK] hn=10, lr=0.500000
++[OK] hn=10, lr=0.100000
++[OK] hn=20, lr=1.000000
++[OK] hn=20, lr=0.500000
++[OK] hn=20, lr=0.100000
++[OK] hn=30, lr=1.000000
++[OK] hn=30, lr=0.500000
+-[RUN] Training ... 5000, 1.629999
+-[RUN] Training ... 10000, 1.629998
+-[RUN] Training ... 15000, 1.629987
+-[RUN] Training ... 20000, 1.086683
++[OK] hn=30, lr=0.100000

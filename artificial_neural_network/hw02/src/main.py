@@ -14,7 +14,7 @@ fileOut = open("result.txt", "w")
 lr_list = [1.0, 0.5, 0.1]
 hidden_num_list = [1, 10, 20, 30]
 
-epochLimit = 1000
+epochLimit = 100000
 
 # ======================================== #
 
@@ -62,7 +62,7 @@ def training(hidden_num, lr) :
 	epoch = 1
 	curErr = 1
 
-	while (epoch < epochLimit) and (curErr > 0.02):
+	while (epoch < epochLimit) and (curErr > 0.2):
 		network.train(trainData)
 		curErr = network.calculate_total_error(trainData)
 		if epoch % 5000 == 0:
