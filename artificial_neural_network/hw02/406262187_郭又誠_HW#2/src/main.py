@@ -69,6 +69,12 @@ def training(hidden_num, lr) :
 			print(f'-[RUN] Training ... {epoch :d}, {curErr :f}')
 		epoch += 1
 
+	write_output(network, epoch, hidden_num, lr)
+
+
+
+def write_output(network, epoch, hidden_num, lr):
+
 	print(f'Number of hidden neurons = {hidden_num :d}', file=fileOut)
 	print(f'Learning rates = {lr :f}', file= fileOut)
 
