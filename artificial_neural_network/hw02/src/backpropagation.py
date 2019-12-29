@@ -14,10 +14,9 @@ class NeuralNetwork(object):
 			self.update_weights(self.learning_rate)
 
 	def feed_forward(self, inputs):
-		s = inputs
-		for (i, l) in enumerate(self.neuron_layers):
-			s = l.feed_forward(s)
-		return s
+		for i in self.neuron_layers:
+			inputs = i.feed_forward(inputs)
+		return inputs
 
 	def feed_backword(self, outputs):
 		layer_num = len(self.neuron_layers)
@@ -54,8 +53,16 @@ class NeuralNetwork(object):
 				total_error += (outputs[i] - actual_outputs[i]) ** 2
 		return total_error / len(dataset)
 
+	def changeOutput(self, x):
+		if (x[0] > x[1]) and (x[0] > x[2]):
+			return [0.9, 0.1, 0.1]
+		if (x[1] > x[0]) and (x[1] > x[2]):
+			return [0.1, 0.9, 0.1]
+		if (x[2] > x[0]) and (x[2] > x[1]):
+			return [0.1, 0.1, 0.9]
+
 	def get_output(self, inputs):
-	   return self.feed_forward(inputs)
+	   return self.changeOutput(self.feed_forward(inputs))
 
 	def add_layer(self, neruon_layer):
 		self.neuron_layers.append(neruon_layer)
