@@ -1,0 +1,36 @@
+Bisection Method:
+----------
+
+roots: 0
+
+
+False Position Method:
+----------
+
+roots: 0
+
+
+Modify False Position Method:
+----------
+
+roots: 0
+
+
+Secant Method:
+----------
+
+roots: 0
+
+
+Newten's Method:
+----------
+
+roots: 0
+
+
+Fixied Method:
+----------
+
+roots: 0
+
+
