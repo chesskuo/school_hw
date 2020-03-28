@@ -1,0 +1,65 @@
+Bisection Method:
+----------
+x = -8.7992990551, times = 34
+x = -6.8610836648, times = 34
+x = -5.7487307509, times = 34
+x = -3.4675991992, times = 34
+x = -2.9542505092, times = 34
+x = 1.4300282065, times = 34
+
+roots: 6
+
+
+False Position Method:
+----------
+x = -8.8015892826, times = 2
+x = -6.8610836647, times = 15
+x = -5.7518345000, times = 1
+x = -3.4675991992, times = 48
+x = -2.9686388464, times = 1
+x = 1.4300282065, times = 15
+
+roots: 6
+
+
+Modify False Position Method:
+----------
+x = -8.8015892826, times = 2
+x = -6.8610836647, times = 15
+x = -5.7518345000, times = 1
+x = -3.4675991992, times = 48
+x = -2.9686388464, times = 1
+x = 1.4300282065, times = 15
+
+roots: 6
+
+
+Secant Method:
+----------
+x = -8.8015892826, times = 2
+x = -6.8610836647, times = 15
+x = -5.7518345000, times = 1
+x = -3.4675991992, times = 48
+x = -2.9686388464, times = 1
+x = 1.4300282065, times = 15
+
+roots: 6
+
+
+Newten's Method:
+----------
+x = -8.7992990551, times = 4
+x = -6.8610836647, times = 4
+x = -5.7487307509, times = 4
+x = -3.4675991992, times = 5
+x = -2.9542505092, times = 4
+x = 1.4300282065, times = 4
+
+roots: 6
+
+
+Fixied Method:
+----------
+
+[ERROR] Boooooooooooooomb~ QQ bro~
+
