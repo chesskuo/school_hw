@@ -1,0 +1,43 @@
+甲帕力帕公園
+
+在甲帕力帕公園中有個管理員，他在分析動物園中的動物，請你幫幫他
+
+---
+
+generate.exe
+有 k 種動物在動物園裡分別是之後 k 行
+動物園中總共有 n 隻動物 是由上面k種動物構成
+請輸出動物園有幾隻動物，換行後輸出動物園全部動物
+
+Sample Input:
+5
+cat
+dog
+turtle
+horse
+sheep
+20
+
+Sample Otput:
+20
+sheep sheep dog cat dog turtle turtle turtle turtle sheep horse cat dog dog turtle turtle horse cat sheep cat
+
+---
+
+main.exe
+用generat.exe生出的測資加上幾筆詢問來分析
+詢問動物名 查詢動物是否存在以EOF結束
+如果存在 請印出例如 "Yes, we have 20 cat."
+如果不存在請印出 "No, We don't have this animal."
+
+Sample Input:
+20
+sheep sheep dog cat dog turtle turtle turtle turtle sheep horse cat dog dog turtle turtle horse cat sheep cat
+2
+elephant
+cat
+
+
+Sample Otput:
+No, We don't have this animal.
+Yes, we have 4 cat.
